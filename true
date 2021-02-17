@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20210217195859_add_index_to_events.rb

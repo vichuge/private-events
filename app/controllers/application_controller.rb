@@ -11,4 +11,5 @@ class ApplicationController < ActionController::Base
   def user_is_logged_in?
     !!session[:user_id]
   end
+
 end

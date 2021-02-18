@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def show
     # @user = User.find(params[:id])
     @events = Event.where(creator_id: session[:user_id].to_i)
-  
   end
 
   def new

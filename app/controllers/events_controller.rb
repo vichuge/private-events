@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    # @events = Event.where(creator_id: session[:user_id].to_i).order(date: :asc)
+    @events_prev = Event.where("date < ?", DateTime.now)
+    @events_next = Event.where("date >= ?", DateTime.now)
   end
 
   def new

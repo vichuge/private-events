@@ -21,6 +21,11 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <p class="control">
+            <% if user_is_logged_in? %>
+            <p>session exists!</p>
+            <% else %>
+            <p>doesn't exists!</p>
+            <% end %>
               <%= link_to "Sign Up", new_user_path, class: "nav-link active" %>
             </p>
             <p class="control">
@@ -30,7 +35,7 @@
               <%= link_to "Create Event", new_event_path, class: "nav-link" %>
             </p>
             <p class="control">
-              <%= link_to "Sign Out", sessions_path, method: :delete, class: "nav-link" %>
+              <%= link_to "Sign Out", '/users/sign_out', method: :delete, class: "nav-link" %>
             </p>
           </div>
         </div>

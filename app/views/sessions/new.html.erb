@@ -3,7 +3,7 @@
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <h1 class="text-center">Sign in</h1><br />
-      <%= form_for(:session, url: new_session_path, method: 'GET') do |f| %>
+      <%= form_for(:session, url: sessions_path, method: 'POST') do |f| %>
         <div class="form-group">
             <%= f.text_field :user, autofocus: true, placeholder: "Enter a username", class: "form-control" %>
         </div><br />

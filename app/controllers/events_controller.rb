@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @creator = User.find(@event.creator_id)
-    @attendees = User.joins('INNER JOIN invitations ON users.user_id=invitations.attendee').where('invitations.attended_event' => @event.id)
+    # @attendees = User.joins('INNER JOIN invitations ON users.user_id=invitations.attendee').where('invitations.attended_event' => @event.id)
   end
 
   private

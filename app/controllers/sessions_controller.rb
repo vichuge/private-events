@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
       end
     end
     
-
     def destroy
       reset_session
       flash[:success] = 'Log out successfully'

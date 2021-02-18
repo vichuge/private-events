@@ -22,7 +22,7 @@
           <div class="navbar-nav">
             <p class="control">
             <% if user_is_logged_in? %>
-            <p>session exists!</p>
+            <p>session exists! <%= session[:user_id] %></p>
             <% else %>
             <p>doesn't exists!</p>
             <% end %>

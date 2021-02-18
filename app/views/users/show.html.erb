@@ -1,4 +1,7 @@
-<h1 class="text-center border-bottom"><%= @user.name %> Show Event</h1>
-<%= created_events(@user, 'users/events', @user.events, 'List of created events')  %>
-<%= attended_events(@user, 'users/events', @upcoming_events,'List of upcoming events')  %>
-<%= attended_events(@user, 'users/events', @prev_events,'List of Previously attended events')  %>
+<h1>Show event</h1>
+<% @events.each do |event| %>
+  <%= event.name %>
+  <%= event.location %>
+  <%= event.description %>
+  <%= event.date %>
+<% end %>

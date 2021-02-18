@@ -27,7 +27,7 @@
               <%= link_to "Create Event", new_event_path, class: "nav-link" %>
             </p>
             <p class="control">
-              <%= link_to "Sign Out", '/users/sign_out', method: :delete, class: "nav-link" %>
+              <%= link_to "Sign Out", sign_out_url, class: "nav-link" %>
             </p>
             <% else %>
             <p class="control">

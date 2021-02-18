@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
-    # @user = User.find(params[:id])
     @events = Event.where(creator_id: session[:user_id].to_i)
+    @upcoming_events = @user.attended_events.upcoming
+    @prev_events = @user.attended_events.past
   end
 
   def new
@@ -19,6 +20,13 @@ class UsersController < ApplicationController
       flash[:alert] = 'User not created, please try again'
       render 'new'
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    session[:username] = nil
+    flash[:success] = 'Log out with success'
+    redirect_to root_path
   end
 
   private

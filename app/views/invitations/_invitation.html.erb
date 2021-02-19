@@ -1,0 +1,10 @@
+<% unless current_user.attended_events.include?(event) %>
+  <%= form_with(model: @invitation, url: invitations_path, method: 'POST', local: true) do |form| %>
+    <div class="forms mb-4">
+      <%= form.hidden_field :event_id, class: 'form-control', value: event.id %>
+      <div class="actions">
+        <%= form.submit 'Attend Event', class: 'btn btn-primary mt-2' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

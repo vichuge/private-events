@@ -34,6 +34,9 @@
             <!--<em>14:00:00</em>-->
           </small>
         </p>
+        <% if user_is_logged_in? %>
+          <%= render 'invitations/invitation', event: event %>
+        <% end %>
       </div>
     </div>
     <br/>

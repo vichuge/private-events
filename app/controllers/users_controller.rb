@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
-    # @user = User.find(params[:id])
-    @events = Event.where(creator_id: session[:user_id].to_i).order(date: :asc)
+    # @events = Event.where(creator_id: session[:user_id].to_i).order(date: :asc)
+    @upcoming_events = current_user.attended_events.upcoming_events
+    @past_events = current_user.attended_events.prev_events
   end
 
   def new

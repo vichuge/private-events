@@ -27,6 +27,9 @@ In this project we:
 ## Video link
 [Video:](https://www.loom.com/share/f052f8a997114a94955e89264668d5cd)
 
+## Live demo
+[Just click here!](https://salty-woodland-00933.herokuapp.com/)
+
 ## Technologies
 
 - Ruby

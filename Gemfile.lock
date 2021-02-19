@@ -222,5 +222,5 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 2.6.6
+   ruby 2.7.2
 

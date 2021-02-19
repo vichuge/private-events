@@ -6,7 +6,7 @@
     <% @events_prev.each do |event| %>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title border-bottom pb-2"><%= event.name %> </h5>
+        <h5 class="card-title border-bottom pb-2"><%= link_to event.name, event_path(event) %> </h5>
         <p class="card-text"><%= event.description %></p>
         <p><strong>Location: </strong><small class="card-text"><%= event.location %></small></p>
         <p><strong>Date: </strong>
@@ -25,7 +25,7 @@
   <% @events_next.each do |event| %>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title border-bottom pb-2"><%= event.name %> </h5>
+        <h5 class="card-title border-bottom pb-2"><%= link_to event.name, event_path(event) %> </h5>
         <p class="card-text"><%= event.description %></p>
         <p><strong>Location: </strong><small class="card-text"><%= event.location %></small></p>
         <p><strong>Date: </strong>

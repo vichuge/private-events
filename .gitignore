@@ -40,5 +40,3 @@ yarn-debug.log*
 .yarn-integrity
 
 # More things to ignore
-.Gemfile
-.Gemfile.lock

@@ -1,6 +1,6 @@
 # The Private Event
 
-This project is a Evenbrite Lite wep app wich allow user to sign uu, sign in and create events.
+This project is a Eventbrite Lite web app wich allow user to sign up, sign in and create events.
 
 ## About
 
@@ -17,10 +17,12 @@ In this project we:
 
 ## Usage
 
-- Clone the repo "https://github.com/vichuge/private-events.git".
-- Write "rails s"
+- Open a terminal
+- Clone the repo by typing that command `git clone https://github.com/vichuge/private-events.git` 
+- Run `bundle install` in your terminal
+- Run `db:migrate` in your terminal to migrate the database
+- Run `rails s`
 - Start adding users, and create events
-
 
 ## Technologies
 

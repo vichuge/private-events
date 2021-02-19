@@ -1,5 +1,6 @@
-<h1><%= session[:username] %> Events</h1>
-
+<h1 class="text-center"><%= session[:username] %> Events</h1>
+<br />
+<br />
 <div class="row">
   <div class="col-md-6">
   <h2>Past</h2>
@@ -22,6 +23,7 @@
             <!--<em>14:00:00</em>-->
           </small>
         </p>
+        <%= link_to "View Event", event_path, class: "btn btn-primary" %>
       </div>
     </div>
     <br/>

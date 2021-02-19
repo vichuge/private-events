@@ -6,5 +6,5 @@ class Event < ApplicationRecord
   has_many :attendees, through: :invitations, source: :attendee
 
   scope :upcoming_events, -> { where('date >= ?', Time.zone.now) }
-  scope :prev_events, -> { where('date < ?', Time.zone.now)}
+  scope :prev_events, -> { where('date < ?', Time.zone.now) }
 end

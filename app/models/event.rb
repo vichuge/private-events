@@ -5,6 +5,6 @@ class Event < ApplicationRecord
   has_many :invitations, foreign_key: :attended_event_id
   has_many :attendees, through: :invitations, source: :attendee
 
-  scope :upcoming_events, -> { where(['events.date > ?', Date.today]) }
-  scope :prev_events, -> { where(['events.date <= ?', Date.today]) }
+  scope :upcoming_events, -> { where('date >= ?', Time.zone.now) }
+  scope :prev_events, -> { where('date < ?', Time.zone.now)}
 end

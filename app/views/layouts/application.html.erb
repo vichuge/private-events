@@ -22,7 +22,7 @@
           <div class="navbar-nav">
             <p class="control">
             <% if user_is_logged_in? %>
-            <p><%= session[:username] %></p>
+            <h5><%= link_to session[:username], events_path, class: "nav-link" %></h5>
             <p class="control">
               <%= link_to "Create Event", new_event_path, class: "nav-link" %>
             </p>
@@ -37,9 +37,6 @@
               <%= link_to "Sign In", new_session_path, class: "nav-link" %>
             </p>
             <% end %>
-            
-            
-            
           </div>
         </div>
       </div>

@@ -1,0 +1,45 @@
+<h1>All the events</h1>
+
+<div class="row">
+  <div class="col-md-6">
+  <h2>Past</h2>
+    <% @events_prev.each do |event| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title border-bottom pb-2"><%= link_to event.name, event_path(event) %> </h5>
+        <p class="card-text"><%= event.description %></p>
+        <p><strong>Location: </strong><small class="card-text"><%= event.location %></small></p>
+        <p><strong>Date: </strong>
+          <small class="card-text">
+            <strong><%= event.date %> </strong>
+            <!--<em>14:00:00</em>-->
+          </small>
+        </p>
+      </div>
+    </div>
+    <br/>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+  <h2>Future</h2>
+  <% @events_next.each do |event| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title border-bottom pb-2"><%= link_to event.name, event_path(event) %> </h5>
+        <p class="card-text"><%= event.description %></p>
+        <p><strong>Location: </strong><small class="card-text"><%= event.location %></small></p>
+        <p><strong>Date: </strong>
+          <small class="card-text">
+            <strong><%= event.date %></strong>
+            <!--<em>14:00:00</em>-->
+          </small>
+        </p>
+        <% if user_is_logged_in? %>
+          <%= render 'invitations/invitation', event: event %>
+        <% end %>
+      </div>
+    </div>
+    <br/>
+    <% end %>
+  </div>
+</div>

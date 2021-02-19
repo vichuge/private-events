@@ -1,0 +1,31 @@
+<div class="row mt-4">
+  <div class="col-md-6 mb-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title border-bottom pb-2"><%= @event.name %>
+        <small class="float-right">Hosted by: <%= @event.creator.name  %> </small></h5>
+        <p class="card-text"><%= @event.description %></p>
+        <p><strong>Location: </strong><small class="card-text"><%= @event.location %></small></p>
+        <p><strong>Date: </strong>
+        <small class="card-text">
+            <strong><%= @event.date.to_s.split(' ').first %> </strong>
+            <em><%= @event.date.to_s.split(' ')[1] %></em>
+        </small>
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-md-3 mb-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title border-bottom pb-2">List of Attendees</h5>
+        <% @event.attendees.each do |attendee|%>
+            <p><strong><%= attendee.name %></strong></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  
+</div>

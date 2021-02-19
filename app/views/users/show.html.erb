@@ -1,0 +1,45 @@
+<h1 class="text-center"><%= session[:username] %> Events</h1>
+<br />
+<br />
+<div class="row">
+  <div class="col-md-6">
+  <h2>Past</h2>
+    <% @past_events.each do |event| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title border-bottom pb-2"><%= link_to event.name, event_path(event) %> </h5>
+        <p class="card-text"><%= event.description %></p>
+        <p><strong>Location: </strong><small class="card-text"><%= event.location %></small></p>
+        <p><strong>Date: </strong>
+          <small class="card-text">
+            <strong><%= event.date %> </strong>
+            <!--<em>14:00:00</em>-->
+          </small>
+        </p>
+        <%= link_to "View Event", event_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+    <br/>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+  <h2>Future</h2>
+    <% @upcoming_events.each do |event| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title border-bottom pb-2"><%= link_to event.name, event_path(event) %> </h5>
+        <p class="card-text"><%= event.description %></p>
+        <p><strong>Location: </strong><small class="card-text"><%= event.location %></small></p>
+        <p><strong>Date: </strong>
+          <small class="card-text">
+            <strong><%= event.date %> </strong>
+            <!--<em>14:00:00</em>-->
+          </small>
+        </p>
+        <%= link_to "View Event", event_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+    <br/>
+    <% end %>
+  </div>
+</div>

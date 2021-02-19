@@ -7,10 +7,43 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" %>
+    
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="<%= root_path%>">Private Events</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <p class="control">
+            <% if user_is_logged_in? %>
+            <h5><%= link_to session[:username], users_path, class: "nav-link" %></h5>
+            <p class="control">
+              <%= link_to "Create Event", new_event_path, class: "nav-link" %>
+            </p>
+            <p class="control">
+              <%= link_to "All Event", events_path, class: "nav-link" %>
+            </p>
+            <p class="control">
+              <%= link_to "Sign Out", sign_out_url, class: "nav-link" %>
+            </p>
+            <% else %>
+            <p class="control">
+              <%= link_to "Sign Up", new_user_path, class: "nav-link active" %>
+            </p>
+            <p class="control">
+              <%= link_to "Sign In", new_session_path, class: "nav-link" %>
+            </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

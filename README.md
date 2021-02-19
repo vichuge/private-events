@@ -24,6 +24,9 @@ In this project we:
 - Run `rails s`
 - Start adding users, and create events
 
+## Video link
+[Video:](https://www.loom.com/share/f052f8a997114a94955e89264668d5cd)
+
 ## Technologies
 
 - Ruby

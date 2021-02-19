@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-    
+  def index
+    @users = User.all
+  end
+
   def show
     # @events = Event.where(creator_id: session[:user_id].to_i).order(date: :asc)
-    @upcoming_events = current_user.attended_events.upcoming_events
-    @past_events = current_user.attended_events.prev_events
+    @upcoming_events = current_user.events.upcoming_events
+    @past_events = current_user.events.prev_events
   end
 
   def new
